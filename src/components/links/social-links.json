@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_links_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "social_platform": {
+      "type": "enumeration",
+      "enum": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "SHOPEE",
+        "TIKTOK",
+        "YOUTUBE",
+        "TWITTER",
+        "WEBSITE"
+      ],
+      "required": true
+    }
+  }
+}

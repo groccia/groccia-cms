@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "displayName": "link",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

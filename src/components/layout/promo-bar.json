@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_promo_bars",
+  "info": {
+    "displayName": "Announcement",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

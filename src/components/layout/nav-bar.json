@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_layout_nav_bars",
+  "info": {
+    "displayName": "NavBar",
+    "icon": "pinMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "displayName": "logo",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.logo"
+    }
+  }
+}
