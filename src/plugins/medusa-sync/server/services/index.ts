@@ -1,5 +1,5 @@
-import myService from './my-service';
+import * as medusaService from './medusaService';
 
 export default {
-  myService,
+  medusaService,
 };
