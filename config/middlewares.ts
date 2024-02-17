@@ -1,11 +1,10 @@
-module.exports = ({ env }) => [
+export default ({ env }) => [
   'strapi::errors',
   'strapi::security',
   'strapi::poweredBy',
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'],
       origin: [

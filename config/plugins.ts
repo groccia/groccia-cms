@@ -1,3 +1,5 @@
+import { uploadProviderLocal, uploadProviderS3 } from './env/local/plugins';
+
 export default ({ env }) => ({
   seo: {
     enabled: true,
@@ -5,9 +7,9 @@ export default ({ env }) => ({
   'content-versioning': {
     enabled: true,
   },
-  'medusa-sync': {
+  'strapi-plugin-medusajs': {
     enabled: true,
-    resolve: './src/plugins/medusa-sync',
+    resolve: './src/plugins/strapi-plugin-medusajs',
   },
   'users-permissions': {
     enabled: true,
@@ -17,7 +19,7 @@ export default ({ env }) => ({
       },
       jwtSecret: env('JWT_SECRET', 'test-jwt'),
       ratelimit:
-        process.env.NODE_ENV == 'test'
+        env('NODE_ENV') == 'test'
           ? {
               interval: 60000,
               max: 100000,
@@ -26,5 +28,9 @@ export default ({ env }) => ({
               headers: true,
             },
     },
+  },
+  upload: {
+    enabled: true,
+    config: env('NODE_ENV') == 'test' ? uploadProviderLocal() : uploadProviderS3(env),
   },
 });

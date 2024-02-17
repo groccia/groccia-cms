@@ -6,4 +6,9 @@ export default ({ env }) => ({
     salt: env('API_TOKEN_SALT'),
   },
   rateLimit: process.env.NODE_ENV == 'test' ? { enabled: false } : { interval: 60000, max: 100000 },
+  transfer: {
+    token: {
+      salt: env('TRANSFER_TOKEN_SALT', 'anotherRandomLongString'),
+    },
+  },
 });
