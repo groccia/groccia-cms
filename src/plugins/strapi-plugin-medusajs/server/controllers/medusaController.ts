@@ -4,8 +4,9 @@ import { Context } from 'koa';
 export default ({ strapi }: { strapi: Strapi }) => ({
   async createUser(ctx: Context) {
     console.log('Creating Medusajs user');
+    strapi.log.info(ctx.request);
     ctx.body = await strapi
-      .plugin('medusa-sync')
+      .plugin('strapi-plugin-medusajs')
       .service('medusaService')
       .verifyOrCreateMedusaUser(ctx.request.body);
 
@@ -13,7 +14,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
   },
   async syncTables(ctx: Context) {
     ctx.body = await strapi
-      .plugin('medusa-sync')
+      .plugin('strapi-plugin-medusajs')
       .service('medusaService')
       .synchronizeWithMedusa({ strapi });
     return ctx.body;

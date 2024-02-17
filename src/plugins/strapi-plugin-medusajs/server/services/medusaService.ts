@@ -1,5 +1,5 @@
 import { Strapi } from '@strapi/strapi';
-import { MedusaUserParams, StrapiSeedInterface } from '../types';
+import { MedusaData, MedusaUserParams, StrapiSeedInterface } from '../types';
 import { checkMedusaReady, createMedusaUser, signalMedusa } from './_utils';
 
 let strapi: Strapi;
@@ -10,7 +10,8 @@ export function config(myStrapi: Strapi): void {
 
 // TODO: Adding user-permissions plugins
 export async function verifyOrCreateMedusaUser(medusaUser: MedusaUserParams): Promise<any> {
-  const users = await strapi.plugins['user-permissions'].services.user.fetchAll({
+  console.log(medusaUser);
+  const users = await strapi.plugins['users-permissions'].services.user.fetchAll({
     filters: {
       email: medusaUser.email,
     },
@@ -131,6 +132,25 @@ export async function synchronizeWithMedusa(): Promise<boolean | undefined> {
   } while (continueSeed);
 
   strapi.log.info('SYNC FINISHED');
-	const result = (await signalMedusa('SYNC COMPLETED'))?.status == 200;
-	return result;
+  const result = (await signalMedusa('SYNC COMPLETED'))?.status == 200;
+  return result;
+}
+
+export async function sendResult(
+  type: string,
+  result: any,
+  origin: 'medusa' | 'strapi'
+): Promise<MedusaData | undefined> {
+  const postRequestResult = await signalMedusa('UPDATE MEDUSA', 200, {
+    type,
+    data: result,
+    origin,
+  });
+
+  if (postRequestResult?.status ?? (0 < 300 && postRequestResult?.status) ?? 0 >= 200) {
+    strapi.log.info(`update to ${type} posted successfully`);
+  } else {
+    strapi.log.info(`error updating type ${type}  posted successfully`);
+  }
+  return postRequestResult;
 }

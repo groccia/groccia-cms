@@ -1,10 +1,10 @@
 {
-  "name": "medusa-sync",
+  "name": "strapi-plugin-medusajs",
   "version": "0.0.0",
   "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "medusa-sync",
-    "description": "Description of medusa-sync plugin",
+    "name": "strapi-plugin-medusajs",
+    "description": "Description of strapi-plugin-medusajs plugin",
     "kind": "plugin"
   },
   "dependencies": {

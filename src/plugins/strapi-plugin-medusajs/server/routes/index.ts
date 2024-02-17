@@ -1,12 +1,12 @@
 export default [
   {
     method: 'POST',
-    path: '/medusa-user',
+    path: '/create-medusa-user',
     handler: 'medusaController.createUser',
   },
   {
     method: 'POST',
-    path: '/sync-tables',
+    path: '/synchronise-medusa-tables',
     handler: 'medusaController.syncTables',
   },
 ];

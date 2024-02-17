@@ -16,7 +16,7 @@ export default async function ({ strapi }: { strapi: Strapi }): Promise<void> {
     if (!superUserExists) {
       await createDefaultAdminRoles();
       await createSuperUser();
-      await deleteAllEntries();
+      // await deleteAllEntries();
     } else {
       strapi.log.info('Found a Superuser account.');
     }
