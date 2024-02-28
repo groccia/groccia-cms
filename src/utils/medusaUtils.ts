@@ -482,7 +482,7 @@ async function controllerUpdate(ctx: Context, strapi: Strapi, uid: Common.UID.Co
   }
 }
 
-function createMedusaDefaultController(uid) {
+function createMedusaDefaultController(uid: Common.UID.ContentType) {
   return factories.createCoreController(uid, {
     async find(ctx) {
       return await controllerFindMany(ctx, strapi, uid);
