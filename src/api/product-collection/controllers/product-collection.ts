@@ -2,6 +2,8 @@
  * product-collection controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::product-collection.product-collection');
+export default medusaUtils.createMedusaDefaultController(
+  'api::product-collection.product-collection'
+);
