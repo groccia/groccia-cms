@@ -33,4 +33,23 @@ export default ({ env }) => ({
     enabled: true,
     config: env('NODE_ENV') == 'test' ? uploadProviderLocal() : uploadProviderS3(env),
   },
+  transformer: {
+    enabled: true,
+    config: {
+      responseTransforms: {
+        removeAttributesKey: true,
+        removeDataKey: true,
+      },
+    },
+  },
+  menus: {
+    config: { maxDepth: 2 },
+  },
+  documentation: {
+    config: {
+      'x-strapi-config': {
+        plugins: ['menus', 'upload', 'users-permissions'],
+      },
+    },
+  },
 });
