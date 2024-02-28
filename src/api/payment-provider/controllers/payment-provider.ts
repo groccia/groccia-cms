@@ -1,7 +1,6 @@
 /**
  * payment-provider controller
  */
+import { medusaUtils } from '../../../utils';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::payment-provider.payment-provider');
+export default medusaUtils.createMedusaDefaultController('api::payment-provider.payment-provider');
