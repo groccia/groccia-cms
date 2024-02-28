@@ -2,6 +2,8 @@
  * fulfillment-provider controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::fulfillment-provider.fulfillment-provider');
+export default medusaUtils.createMedusaDefaultController(
+  'api::fulfillment-provider.fulfillment-provider'
+);
