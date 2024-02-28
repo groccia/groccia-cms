@@ -1,7 +1,6 @@
 /**
  * region controller
  */
+import { medusaUtils } from '../../../utils';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::region.region');
+export default medusaUtils.createMedusaDefaultController('api::region.region');
