@@ -2,6 +2,6 @@
  * money-amount controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::money-amount.money-amount');
+export default medusaUtils.createMedusaDefaultController('api::money-amount.money-amount');
