@@ -1,7 +1,6 @@
 /**
  * country controller
  */
+import { medusaUtils } from '../../../utils';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::country.country');
+export default medusaUtils.createMedusaDefaultController('api::country.country');
