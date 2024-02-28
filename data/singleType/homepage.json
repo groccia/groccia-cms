@@ -1,0 +1,38 @@
+{
+  "hero_carousel": [
+    {
+      "title": "Just one click, we deliver it to you",
+      "description": "Groccia offers best in-day delivery if you order before 12AM",
+      "image": "carousel-0.webp",
+      "buttons": [
+        {
+          "text": "Order now",
+          "url": "",
+          "type": "primary",
+          "target": "_self"
+        }
+      ],
+      "order": 1
+    },
+    {
+      "title": "Rice, rice, rice subscription baby",
+      "description": "We have best rice for you. Even better with subscription",
+      "image": "carousel-1.webp",
+      "buttons": [
+        {
+          "text": "Order now",
+          "url": "",
+          "type": "primary",
+          "target": "_self"
+        },
+        {
+          "text": "How it works?",
+          "url": "",
+          "type": "secondary",
+          "target": "_blank"
+        }
+      ],
+      "order": 2
+    }
+  ]
+}

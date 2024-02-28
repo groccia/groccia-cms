@@ -1,3 +1,4 @@
+import bootstrapUtils from './bootstrapUtils';
 import medusaUtils from './medusaUtils';
 
-export { medusaUtils };
+export { bootstrapUtils, medusaUtils };
