@@ -10,7 +10,6 @@ export function config(myStrapi: Strapi): void {
 
 // TODO: Adding user-permissions plugins
 export async function verifyOrCreateMedusaUser(medusaUser: MedusaUserParams): Promise<any> {
-  console.log(medusaUser);
   const users = await strapi.plugins['users-permissions'].services.user.fetchAll({
     filters: {
       email: medusaUser.email,
@@ -40,7 +39,7 @@ export async function synchronizeWithMedusa(): Promise<boolean | undefined> {
     pageNumber = seedData?.meta.pageNumber;
   } catch (error) {
     strapi.log.info(
-      'Unable to Fetch Seed Data from Medusa server.Please check configuartion' +
+      'Unable to Fetch Seed Data from Medusa server.Please check configuration' +
         `${JSON.stringify(error)}`
     );
     return false;
