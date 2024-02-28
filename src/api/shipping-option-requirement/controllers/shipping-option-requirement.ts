@@ -2,6 +2,8 @@
  * shipping-option-requirement controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::shipping-option-requirement.shipping-option-requirement');
+export default medusaUtils.createMedusaDefaultController(
+  'api::shipping-option-requirement.shipping-option-requirement'
+);

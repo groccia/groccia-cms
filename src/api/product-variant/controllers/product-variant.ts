@@ -2,6 +2,6 @@
  * product-variant controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::product-variant.product-variant');
+export default medusaUtils.createMedusaDefaultController('api::product-variant.product-variant');

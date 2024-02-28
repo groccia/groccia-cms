@@ -2,6 +2,8 @@
  * product-option controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::product-option.product-option');
+export default medusaUtils.createMedusaDefaultController(
+  'api::product-option-value.product-option-value'
+);

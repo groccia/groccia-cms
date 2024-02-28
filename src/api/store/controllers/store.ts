@@ -2,6 +2,6 @@
  * store controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::store.store');
+export default medusaUtils.createMedusaDefaultController('api::store.store');

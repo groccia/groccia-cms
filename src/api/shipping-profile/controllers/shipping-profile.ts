@@ -2,6 +2,6 @@
  * shipping-profile controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::shipping-profile.shipping-profile');
+export default medusaUtils.createMedusaDefaultController('api::shipping-profile.shipping-profile');
