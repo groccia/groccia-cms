@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_options",
+  "info": {
+    "singularName": "product-option",
+    "pluralName": "product-options",
+    "displayName": "Product Option"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "versions": {
+      "versioned": true
+    }
+  },
+  "attributes": {
+    "medusa_id": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "product_option_values": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-option-value.product-option-value",
+      "inversedBy": "product_option"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_options"
+    }
+  }
+}
