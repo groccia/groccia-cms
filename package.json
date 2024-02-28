@@ -9,17 +9,30 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/koa": "^2.14.0",
+    "@types/koa-bodyparser": "^4.3.12"
+  },
   "dependencies": {
+    "@aws-sdk/client-sts": "^3.515.0",
+    "@aws-sdk/credential-provider-node": "^3.515.0",
     "@notum-cz/strapi-plugin-content-versioning": "^1.2.9",
+    "@strapi/plugin-documentation": "^4.20.1",
     "@strapi/plugin-i18n": "4.19.1",
     "@strapi/plugin-seo": "^1.9.8",
     "@strapi/plugin-users-permissions": "^4.20.0",
+    "@strapi/provider-upload-aws-s3": "^4.20.1",
+    "@strapi/provider-upload-local": "^4.20.1",
     "@strapi/strapi": "4.19.1",
+    "mime-types": "^2.1.35",
+    "object-hash": "^3.0.0",
     "pg": "^8.11.3",
+    "qs": "^6.11.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "strapi-plugin-menus": "^1.6.1",
+    "strapi-plugin-transformer": "^3.1.2",
     "styled-components": "5.3.3"
   },
   "author": {
