@@ -12,13 +12,13 @@
       "component": "layout.logo",
       "required": true
     },
-    "socialLinks": {
+    "social_links": {
       "type": "component",
       "repeatable": true,
       "component": "links.social-links",
       "required": true
     },
-    "legalLinks": {
+    "legal_links": {
       "type": "component",
       "repeatable": true,
       "component": "links.link",

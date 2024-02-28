@@ -1,17 +1,13 @@
 {
   "collectionName": "components_links_button_links",
   "info": {
-    "displayName": "button-link"
+    "displayName": "button-link",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "url": {
       "type": "string",
-      "required": false
-    },
-    "openInNewTab": {
-      "type": "boolean",
-      "default": false,
       "required": false
     },
     "text": {
@@ -23,6 +19,17 @@
         "primary",
         "secondary"
       ]
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "default": "_self",
+      "required": true
     }
   }
 }

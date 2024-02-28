@@ -13,7 +13,7 @@
     "url": {
       "type": "string"
     },
-    "openInNewTab": {
+    "new_tab": {
       "type": "boolean",
       "default": false
     }

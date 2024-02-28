@@ -11,7 +11,7 @@
       "type": "string",
       "required": true
     },
-    "openInNewTab": {
+    "new_tab": {
       "type": "boolean",
       "default": false,
       "required": false

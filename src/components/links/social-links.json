@@ -2,7 +2,8 @@
   "collectionName": "components_links_social_links",
   "info": {
     "displayName": "Social Links",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,7 +11,7 @@
       "type": "string",
       "required": true
     },
-    "openInNewTab": {
+    "new_tab": {
       "type": "boolean",
       "default": false
     },
