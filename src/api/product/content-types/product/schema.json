@@ -106,24 +106,6 @@
       "target": "api::product-tag.product-tag",
       "mappedBy": "products"
     },
-    "product_metafield": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product-metafield.product-metafield",
-      "inversedBy": "product"
-    },
-    "product_legal": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product-legal.product-legal",
-      "inversedBy": "products"
-    },
-    "product_medias": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product-media.product-media",
-      "mappedBy": "product"
-    },
     "product_collection": {
       "type": "relation",
       "relation": "manyToOne",

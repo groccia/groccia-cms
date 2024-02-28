@@ -4,4 +4,19 @@
 
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreRouter('api::product.product');
+export default factories.createCoreRouter('api::product.product', {
+  prefix: '',
+  only: ['find', 'findOne', 'create', 'update', 'delete'],
+  except: [],
+  config: {
+    find: {
+      auth: false,
+      policies: [],
+      middlewares: [],
+    },
+    findOne: {},
+    create: {},
+    update: {},
+    delete: {},
+  },
+});
