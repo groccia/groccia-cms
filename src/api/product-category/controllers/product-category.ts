@@ -2,6 +2,6 @@
  * product-category controller
  */
 
-import { factories } from '@strapi/strapi'
+import { medusaUtils } from '../../../utils';
 
-export default factories.createCoreController('api::product-category.product-category');
+export default medusaUtils.createMedusaDefaultController('api::product-category.product-category');
