@@ -1,7 +1,6 @@
 /**
  * currency controller
  */
+import { medusaUtils } from '../../../utils';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::currency.currency');
+export default medusaUtils.createMedusaDefaultController('api::currency.currency');
