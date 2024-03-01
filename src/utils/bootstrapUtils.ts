@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import mime from 'mime-types';
 import homepageData from '../../data/singleType/homepage.json';
+import localeData from '../../data/misc/locales.json';
 
 async function isFirstRun() {
   const pluginStore = strapi.store({
@@ -148,8 +149,24 @@ async function importSeedData() {
     homepage: ['find', 'findOne'],
   });
 
+  await importDefaultLocale();
   await importGlobal();
   await importHomepage();
+}
+
+async function importDefaultLocale() {
+  try {
+    for (const locale of localeData) {
+      const createdLocale = await strapi
+        .query('plugin::i18n.locale')
+        .create({ data: { name: locale.name, code: locale.code } });
+      if (createdLocale) {
+        strapi.log.info(`Created locale ${locale.code} successfully`);
+      }
+    }
+  } catch (error) {
+    strapi.log.error(error);
+  }
 }
 
 async function importGlobal() {
@@ -162,7 +179,7 @@ async function importHomepage() {
     const image = await checkFileExistsBeforeUpload(carousel.image);
     hero_carousel.push({ ...carousel, image });
   }
-  await createEntry({ model: 'homepage', entry: { hero_carousel } });
+  await createEntry({ model: 'homepage', entry: { hero_carousel, locale: homepageData.locale } });
 }
 
 export default { isFirstRun, importSeedData };
