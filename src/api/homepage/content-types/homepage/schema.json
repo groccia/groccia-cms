@@ -26,6 +26,16 @@
         }
       },
       "component": "sections.hero-image"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }
