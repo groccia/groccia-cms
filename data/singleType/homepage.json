@@ -11,8 +11,7 @@
           "type": "primary",
           "target": "_self"
         }
-      ],
-      "order": 1
+      ]
     },
     {
       "title": "Rice, rice, rice subscription baby",
@@ -31,8 +30,12 @@
           "type": "secondary",
           "target": "_blank"
         }
-      ],
-      "order": 2
+      ]
     }
-  ]
+  ],
+  "seo": {
+    "metaTitle": "Groccia: Best way to shop Asian groceries",
+    "metaDescription": "Deliver Asian groceries in Helsinki, Stockholm in-day within a click"
+  },
+  "locale": "fi"
 }
