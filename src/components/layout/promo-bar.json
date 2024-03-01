@@ -13,9 +13,16 @@
     "url": {
       "type": "string"
     },
-    "new_tab": {
-      "type": "boolean",
-      "default": false
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "default": "_blank",
+      "required": false
     }
   }
 }

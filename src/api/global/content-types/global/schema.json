@@ -28,6 +28,16 @@
           "localized": true
         }
       }
+    },
+    "announcement_bar": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "layout.promo-bar"
     }
   }
 }
