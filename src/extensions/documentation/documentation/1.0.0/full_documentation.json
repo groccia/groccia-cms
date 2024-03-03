@@ -7,12 +7,6 @@
     ],
     "path": "/documentation"
   },
-  "servers": [
-    {
-      "url": "http://localhost:1337/api",
-      "description": "Development server"
-    }
-  ],
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
@@ -28,8 +22,14 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-03-01T23:05:17.111Z"
+    "x-generation-date": "2024-03-02T16:08:08.589Z"
   },
+  "servers": [
+    {
+      "url": "http://0.0.0.0:1337/api",
+      "description": "Development server"
+    }
+  ],
   "externalDocs": {
     "description": "Find out more",
     "url": "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"

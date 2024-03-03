@@ -179,7 +179,7 @@ async function importHomepage() {
     const image = await checkFileExistsBeforeUpload(carousel.image);
     hero_carousel.push({ ...carousel, image });
   }
-  await createEntry({ model: 'homepage', entry: { hero_carousel, locale: homepageData.locale } });
+  await createEntry({ model: 'homepage', entry: { ...homepageData, hero_carousel } });
 }
 
 export default { isFirstRun, importSeedData };
