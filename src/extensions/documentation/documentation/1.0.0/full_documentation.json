@@ -22,7 +22,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-03-02T16:08:08.589Z"
+    "x-generation-date": "2024-04-03T17:22:06.367Z"
   },
   "servers": [
     {
@@ -4782,6 +4782,15 @@
           "announcement_bar": {
             "$ref": "#/components/schemas/LayoutPromoBarComponent"
           },
+          "footer": {
+            "$ref": "#/components/schemas/LayoutFooterComponent"
+          },
+          "flyout_nav": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinksNestedLinkComponent"
+            }
+          },
           "locale": {
             "type": "string"
           }
@@ -4812,6 +4821,15 @@
               },
               "announcement_bar": {
                 "$ref": "#/components/schemas/LayoutPromoBarComponent"
+              },
+              "footer": {
+                "$ref": "#/components/schemas/LayoutFooterComponent"
+              },
+              "flyout_nav": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LinksNestedLinkComponent"
+                }
               },
               "locale": {
                 "type": "string"
@@ -5565,6 +5583,15 @@
           "announcement_bar": {
             "$ref": "#/components/schemas/LayoutPromoBarComponent"
           },
+          "footer": {
+            "$ref": "#/components/schemas/LayoutFooterComponent"
+          },
+          "flyout_nav": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinksNestedLinkComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -5672,8 +5699,176 @@
           }
         }
       },
+      "LayoutFooterComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "social_links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "new_tab": {
+                  "type": "boolean"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "social_platform": {
+                  "type": "string",
+                  "enum": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "SHOPEE",
+                    "TIKTOK",
+                    "YOUTUBE",
+                    "TWITTER",
+                    "WEBSITE"
+                  ]
+                }
+              }
+            }
+          },
+          "policy_links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "_blank",
+                    "_self",
+                    "_parent",
+                    "_top"
+                  ]
+                }
+              }
+            }
+          },
+          "about_company": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "_blank",
+                    "_self",
+                    "_parent",
+                    "_top"
+                  ]
+                }
+              }
+            }
+          },
+          "store_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "_blank",
+                    "_self",
+                    "_parent",
+                    "_top"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "LinksNestedLinkComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string",
+            "enum": [
+              "_blank",
+              "_self",
+              "_parent",
+              "_top"
+            ]
+          },
+          "child": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "_blank",
+                    "_self",
+                    "_parent",
+                    "_top"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
       "HomepageLocalizationRequest": {
         "required": [
+          "product_rails",
           "locale"
         ],
         "type": "object",
@@ -5687,6 +5882,12 @@
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
+          "product_rails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentProductRailComponent"
+            }
+          },
           "locale": {
             "type": "string"
           }
@@ -5699,6 +5900,9 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "product_rails"
+            ],
             "type": "object",
             "properties": {
               "hero_carousel": {
@@ -5709,6 +5913,12 @@
               },
               "seo": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "product_rails": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ContentProductRailComponent"
+                }
               },
               "locale": {
                 "type": "string"
@@ -5833,6 +6043,9 @@
       },
       "Homepage": {
         "type": "object",
+        "required": [
+          "product_rails"
+        ],
         "properties": {
           "hero_carousel": {
             "type": "array",
@@ -5842,6 +6055,12 @@
           },
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "product_rails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentProductRailComponent"
+            }
           },
           "createdAt": {
             "type": "string",
@@ -6922,6 +7141,23 @@
           },
           "canonicalURL": {
             "type": "string"
+          }
+        }
+      },
+      "ContentProductRailComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "collection_handle": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
           }
         }
       },
