@@ -6,23 +6,27 @@
   },
   "options": {},
   "attributes": {
-    "logo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.logo",
-      "required": true
-    },
     "social_links": {
       "type": "component",
       "repeatable": true,
       "component": "links.social-links",
       "required": true
     },
-    "legal_links": {
+    "policy_links": {
       "type": "component",
       "repeatable": true,
       "component": "links.link",
       "required": true
+    },
+    "about_company": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
+    },
+    "store_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
     }
   }
 }
