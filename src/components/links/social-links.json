@@ -15,7 +15,7 @@
       "type": "boolean",
       "default": false
     },
-    "text": {
+    "title": {
       "type": "string",
       "required": true
     },

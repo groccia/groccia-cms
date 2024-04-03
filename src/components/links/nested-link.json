@@ -1,19 +1,17 @@
 {
-  "collectionName": "components_links_links",
+  "collectionName": "components_links_nested_links",
   "info": {
-    "displayName": "link",
-    "icon": "link",
+    "displayName": "Nested Link",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "url": {
-      "type": "string",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": true
+    },
+    "url": {
+      "type": "string"
     },
     "target": {
       "type": "enumeration",
@@ -23,8 +21,12 @@
         "_parent",
         "_top"
       ],
-      "default": "_self",
-      "required": false
+      "default": "_self"
+    },
+    "child": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
     }
   }
 }
