@@ -36,6 +36,18 @@
         }
       },
       "component": "shared.seo"
+    },
+    "product_rails": {
+      "displayName": "Product Rail",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "content.product-rail",
+      "required": true
     }
   }
 }

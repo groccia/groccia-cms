@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_content_product_rails",
+  "info": {
+    "displayName": "Product Rail",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "collection_handle": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "unique": true,
+      "type": "integer",
+      "min": 1
+    }
+  }
+}
