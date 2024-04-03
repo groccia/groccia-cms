@@ -1,5 +1,4 @@
-import { factories } from '@strapi/strapi';
-import { Common, Schema, Strapi } from '@strapi/strapi';
+import { Common, Schema, factories, Strapi } from '@strapi/strapi';
 import { Context } from 'koa';
 import _ from 'lodash';
 
