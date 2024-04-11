@@ -7,10 +7,6 @@ export default ({ env }) => ({
   'content-versioning': {
     enabled: true,
   },
-  'strapi-plugin-medusajs': {
-    enabled: true,
-    resolve: './src/plugins/strapi-plugin-medusajs',
-  },
   'users-permissions': {
     enabled: true,
     config: {
