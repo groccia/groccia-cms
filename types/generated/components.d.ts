@@ -1,5 +1,26 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ContentProductRail extends Schema.Component {
+  collectionName: 'components_content_product_rails';
+  info: {
+    displayName: 'Product Rail';
+    icon: 'cube';
+    description: '';
+  };
+  attributes: {
+    collection_handle: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    order: Attribute.Integer &
+      Attribute.Unique &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
 export interface ContentTextIcon extends Schema.Component {
   collectionName: 'components_content_text_icons';
   info: {
@@ -18,10 +39,11 @@ export interface LayoutFooter extends Schema.Component {
     description: '';
   };
   attributes: {
-    logo: Attribute.Component<'layout.logo'> & Attribute.Required;
-    socialLinks: Attribute.Component<'links.social-links', true> &
+    social_links: Attribute.Component<'links.social-links', true> &
       Attribute.Required;
-    legalLinks: Attribute.Component<'links.link', true> & Attribute.Required;
+    policy_links: Attribute.Component<'links.link', true> & Attribute.Required;
+    about_company: Attribute.Component<'links.link', true>;
+    store_list: Attribute.Component<'links.link', true>;
   };
 }
 
@@ -57,7 +79,8 @@ export interface LayoutPromoBar extends Schema.Component {
   attributes: {
     text: Attribute.String & Attribute.Required;
     url: Attribute.String;
-    openInNewTab: Attribute.Boolean & Attribute.DefaultTo<false>;
+    target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']> &
+      Attribute.DefaultTo<'_blank'>;
   };
 }
 
@@ -65,12 +88,15 @@ export interface LinksButtonLink extends Schema.Component {
   collectionName: 'components_links_button_links';
   info: {
     displayName: 'button-link';
+    description: '';
   };
   attributes: {
     url: Attribute.String;
-    openInNewTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.String;
     type: Attribute.Enumeration<['primary', 'secondary']>;
+    target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'_self'>;
   };
 }
 
@@ -83,8 +109,24 @@ export interface LinksLink extends Schema.Component {
   };
   attributes: {
     url: Attribute.String & Attribute.Required;
-    openInNewTab: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']> &
+      Attribute.DefaultTo<'_self'>;
+  };
+}
+
+export interface LinksNestedLink extends Schema.Component {
+  collectionName: 'components_links_nested_links';
+  info: {
+    displayName: 'Nested Link';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    url: Attribute.String;
+    target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']> &
+      Attribute.DefaultTo<'_self'>;
+    child: Attribute.Component<'links.link', true>;
   };
 }
 
@@ -93,11 +135,12 @@ export interface LinksSocialLinks extends Schema.Component {
   info: {
     displayName: 'Social Links';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     url: Attribute.String & Attribute.Required;
-    openInNewTab: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.String & Attribute.Required;
+    new_tab: Attribute.Boolean & Attribute.DefaultTo<false>;
+    title: Attribute.String & Attribute.Required;
     social_platform: Attribute.Enumeration<
       [
         'FACEBOOK',
@@ -194,6 +237,7 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'content.product-rail': ContentProductRail;
       'content.text-icon': ContentTextIcon;
       'layout.footer': LayoutFooter;
       'layout.logo': LayoutLogo;
@@ -201,6 +245,7 @@ declare module '@strapi/types' {
       'layout.promo-bar': LayoutPromoBar;
       'links.button-link': LinksButtonLink;
       'links.link': LinksLink;
+      'links.nested-link': LinksNestedLink;
       'links.social-links': LinksSocialLinks;
       'meta.metadata': MetaMetadata;
       'sections.hero-image': SectionsHeroImage;
