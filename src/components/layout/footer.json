@@ -27,6 +27,10 @@
       "type": "component",
       "repeatable": true,
       "component": "links.link"
+    },
+    "description": {
+      "type": "text",
+      "required": false
     }
   }
 }

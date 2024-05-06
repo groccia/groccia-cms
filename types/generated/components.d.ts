@@ -44,6 +44,7 @@ export interface LayoutFooter extends Schema.Component {
     policy_links: Attribute.Component<'links.link', true> & Attribute.Required;
     about_company: Attribute.Component<'links.link', true>;
     store_list: Attribute.Component<'links.link', true>;
+    description: Attribute.Text;
   };
 }
 
@@ -139,7 +140,6 @@ export interface LinksSocialLinks extends Schema.Component {
   };
   attributes: {
     url: Attribute.String & Attribute.Required;
-    new_tab: Attribute.Boolean & Attribute.DefaultTo<false>;
     title: Attribute.String & Attribute.Required;
     social_platform: Attribute.Enumeration<
       [
