@@ -11,10 +11,6 @@
       "type": "string",
       "required": true
     },
-    "new_tab": {
-      "type": "boolean",
-      "default": false
-    },
     "title": {
       "type": "string",
       "required": true
